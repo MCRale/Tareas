@@ -1,0 +1,16 @@
+File ~/.local/lib/python3.11/site-packages/fpdf/fpdf.py:1636, in FPDF._enddoc(self)
+   1634 def _enddoc(self):
+   1635     self._putheader()
+-> 1636     self._putpages()
+   1637     self._putresources()
+   1638     #Info
+
+File ~/.local/lib/python3.11/site-packages/fpdf/fpdf.py:1170, in FPDF._putpages(self)
+   1167 #Page content
+   1168 if self.compress:
+   1169     # manage binary data as latin1 until PEP461 or similar is implemented
+-> 1170     p = self.pages[n].encode("latin1") if PY3K else self.pages[n] 
+   1171     p = zlib.compress(p)
+   1172 else:
+
+UnicodeEncodeError: 'latin-1' codec can't encode character '\u03c0' in position 945: ordinal not in range(256)
