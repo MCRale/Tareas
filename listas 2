@@ -1,0 +1,10 @@
+Ingrese los 6 números ganadores de la lotería primitiva:
+Ingrese el número 1 (entre 1 y 49): 34
+Ingrese el número 2 (entre 1 y 49): 12
+Ingrese el número 3 (entre 1 y 49): 45
+Ingrese el número 4 (entre 1 y 49): 7
+Ingrese el número 5 (entre 1 y 49): 23
+Ingrese el número 6 (entre 1 y 49): 18
+
+Números ganadores ordenados de menor a mayor:
+7, 12, 18, 23, 34, 45
