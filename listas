@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+
+namespace AbecedarioPOO
+{
+    class AbecedarioManager
+    {
+        private List<char> abecedario;
+
+        // Constructor: inicializa el abecedario
+        public AbecedarioManager()
+        {
+            abecedario = new List<char>();
+            for (char letra = 'a'; letra <= 'z'; letra++)
+            {
+                abecedario.Add(letra);
+            }
+        }
+
+        // Método para eliminar letras en posiciones múltiplos de 3
+        public void EliminarMultiplosDeTres()
+        {
+            // Crear una lista auxiliar para almacenar las letras que quedan
+            List<char> resultado = new List<char>();
+
+            for (int i = 0; i < abecedario.Count; i++)
+            {
+                // Si la posición (índice + 1) no es múltiplo de 3, conservar la letra
+                if ((i + 1) % 3 != 0)
+                {
+                    resultado.Add(abecedario[i]);
+                }
+            }
+
+            // Reemplazar la lista original con el resultado
+            abecedario = resultado;
+        }
+
+        // Método para mostrar el abecedario por pantalla
+        public void MostrarAbecedario()
+        {
+            Console.WriteLine("Abecedario actual: " + string.Join(", ", abecedario));
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Crear una instancia de AbecedarioManager
+            AbecedarioManager manager = new AbecedarioManager();
+
+            Console.WriteLine("Abecedario original:");
+            manager.MostrarAbecedario();
+
+            // Eliminar letras en posiciones múltiplos de 3
+            manager.EliminarMultiplosDeTres();
+
+            Console.WriteLine("\nAbecedario después de eliminar posiciones múltiplos de 3:");
+            manager.MostrarAbecedario();
+        }
+    }
+}
