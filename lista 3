@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+
+namespace ContarVocales
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Solicitar al usuario que ingrese una palabra
+            Console.Write("Ingrese una palabra: ");
+            string palabra = Console.ReadLine().ToLower(); // Convertir a minúsculas para evitar diferencias entre mayúsculas y minúsculas
+
+            // Crear un diccionario para contar las vocales
+            Dictionary<char, int> conteoVocales = new Dictionary<char, int>
+            {
+                { 'a', 0 },
+                { 'e', 0 },
+                { 'i', 0 },
+                { 'o', 0 },
+                { 'u', 0 }
+            };
+
+            // Recorrer la palabra y contar las vocales
+            foreach (char letra in palabra)
+            {
+                if (conteoVocales.ContainsKey(letra))
+                {
+                    conteoVocales[letra]++;
+                }
+            }
+
+            // Mostrar los resultados
+            Console.WriteLine("\nCantidad de vocales en la palabra:");
+            foreach (var kvp in conteoVocales)
+            {
+                Console.WriteLine($"{kvp.Key}: {kvp.Value}");
+            }
+        }
+    }
+}
+
